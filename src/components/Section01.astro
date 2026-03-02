@@ -1,0 +1,23 @@
+---
+import videoHero from '@/assets/videos/hero.mp4'
+import SvgChevronRight from '@/assets/icons/chevron-right.svg'
+---
+
+<section class="reveal group relative flex min-h-screen items-center bg-black py-36 text-white">
+	<video class="absolute top-0 left-0 size-full object-cover opacity-25 blur-xs group-reveal:opacity-0" src={videoHero} autoplay loop muted playsinline></video>
+	<div class="relative container flex flex-col gap-12">
+		<h1 class="text-4xl font-semibold text-balance uppercase group-reveal:-translate-y-24 group-reveal:opacity-0 md:text-7xl">Nuestro hogar, nuestro futuro</h1>
+		<div class="max-w-2xl space-y-6 self-end group-reveal:translate-y-24 group-reveal:opacity-0 md:text-lg">
+			<p>
+				El hogar es el lugar donde empiezan las decisiones valientes: mudarse, ampliar la familia, empezar de nuevo. Cuidarlo y anticiparse a lo que pueda pasar
+				es la mejor forma de disfrutarlo con tranquilidad.
+			</p>
+			<p class="text-white/50 italic">Porque cuando sabes que todo está bajo control, solo queda una cosa: vivir.</p>
+		</div>
+	</div>
+
+	<div id="scroll-indicator" class="absolute right-12 bottom-12 flex rotate-90 items-center gap-1 group-reveal:translate-y-24 group-reveal:opacity-0">
+		<span class="rotate-180 text-xs text-white/50 uppercase [writing-mode:vertical-lr]">Scroll</span>
+		<SvgChevronRight class="w-5" />
+	</div>
+</section>

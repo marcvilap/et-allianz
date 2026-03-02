@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Section01 from '@/components/Section01.astro'
+import Section02 from '@/components/Section02.astro'
+import Section03 from '@/components/Section03.astro'
+---
+
+<Layout>
+	<main class="overflow-clip">
+		<div id="scroll-container">
+			<div id="scroll-wrapper">
+				<Section01 />
+				<Section02 />
+				<Section03 />
+			</div>
+			<span id="scroll-progress"></span>
+		</div>
+	</main>
+</Layout>

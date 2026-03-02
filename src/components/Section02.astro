@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets'
+import SvgChevronRight from '@/assets/icons/chevron-right.svg'
+import img1 from '@/assets/images/img1.webp'
+import img2 from '@/assets/images/img2.webp'
+import img3 from '@/assets/images/img3.webp'
+
+const items = [
+	{
+		image: img1,
+		label: 'Clima',
+		title: 'Tormenta a la vista',
+		subtitle: 'Tu primera defensa frente al clima inestable empieza en casa',
+		description:
+			'El clima cambia, pero tu tranquilidad no tiene por qué hacerlo. Revisar pequeños detalles, reforzar puntos clave y anticiparse a lluvias o rachas de viento permite disfrutar del hogar con confianza.',
+		link: '',
+	},
+	{
+		image: img2,
+		label: 'Emergencias',
+		title: 'Cada minuto cuenta',
+		subtitle: 'Cuando llegar a tiempo marca la diferencia',
+		description:
+			'Una tubería rota, una cerradura bloqueada o un corte de luz inesperado. Contar con asistencia rápida y profesional convierte lo urgente en algo manejable, sin estrés ni sorpresas.',
+		link: '',
+	},
+	{
+		image: img3,
+		label: 'Bienestar',
+		title: 'Tu hogar, tu refugio',
+		subtitle: 'Proteger lo que más importa empieza por sentirse seguro en casa',
+		description:
+			'La tranquilidad de saber que tu hogar está protegido es la base de una vida plena. Anticiparse, prevenir y cuidar cada rincón es invertir en bienestar para toda la familia.',
+		link: '',
+	},
+]
+---
+
+<section class="grid bg-blue-950 text-white lg:grid-cols-3">
+	{
+		items.map(({ image, label, title, subtitle, description, link }) => (
+			<article class="relative flex min-h-screen items-end overflow-clip">
+				<Image class="absolute top-0 left-0 size-full object-cover opacity-75" src={image} alt="" />
+				<span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75" />
+				<div class="relative container py-24">
+					<div class="group reveal space-y-6">
+						<h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0">
+							{label}
+						</h2>
+						<h3 class="text-4xl font-semibold text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-100">{title}</h3>
+						<h4 class="text-xl text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-200">{subtitle}</h4>
+						<p class="text-sm text-white/50 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-300">{description}</p>
+						<a class="group flex items-center gap-3 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-400" target="_blank" href={link}>
+							<span class="text-sm uppercase">Ver más</span>
+							<SvgChevronRight class="size-6 rounded-full border border-white/50 p-1 transition-transform group-hover:translate-x-2" />
+						</a>
+					</div>
+				</div>
+			</article>
+		))
+	}
+</section>
