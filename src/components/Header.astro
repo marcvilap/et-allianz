@@ -2,12 +2,12 @@
 import SvgLogo from '@/assets/icons/logo.svg'
 ---
 
-<header class="absolute inset-x-0 top-18 z-10 px-12 text-white">
+<header id="header" class="fixed inset-x-0 z-50 px-12 text-white transition-colors duration-500" style="top: 4.5rem">
 	<a class="flex items-center gap-6" href="/">
 		<span class="grid leading-none">
 			<strong>Y a vivir</strong>
-			<small class="text-xs text-white/50 uppercase">Un proyecto de</small>
+			<small class="text-xs uppercase transition-colors duration-500" id="header-subtitle">Un proyecto de</small>
 		</span>
-		<SvgLogo class="h-10 md:h-12" />
+		<SvgLogo id="header-logo" class="h-10 transition-colors duration-500 md:h-12" />
 	</a>
 </header>

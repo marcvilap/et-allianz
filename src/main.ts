@@ -57,6 +57,39 @@ const revealsObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(element => revealsObserver.observe(element))
 
+// Header position and color
+const header = document.getElementById('header')
+const headerSubtitle = document.getElementById('header-subtitle')
+const nav = document.getElementById('nav')
+const sectionFooter = document.getElementById('section-footer')
+
+if (header) {
+	const headerLogo = document.getElementById('header-logo')
+	const GAP = 24
+
+	const updateHeader = () => {
+		// Move header up as nav scrolls away
+		if (nav) {
+			const navBottom = Math.max(0, nav.getBoundingClientRect().bottom)
+			header.style.top = `${navBottom + GAP}px`
+		}
+
+		// Change color when logo overlaps footer section
+		if (headerLogo && sectionFooter) {
+			const logoRect = headerLogo.getBoundingClientRect()
+			const footerRect = sectionFooter.getBoundingClientRect()
+			const overlaps = logoRect.right > footerRect.left && logoRect.left < footerRect.right && logoRect.bottom > footerRect.top && logoRect.top < footerRect.bottom
+			header.classList.toggle('text-white', !overlaps)
+			header.classList.toggle('text-blue-950', overlaps)
+			headerSubtitle?.classList.toggle('text-white/50', !overlaps)
+			headerSubtitle?.classList.toggle('text-blue-950/50', overlaps)
+		}
+	}
+
+	window.addEventListener('scroll', updateHeader, { passive: true })
+	updateHeader()
+}
+
 const buttonsTab = document.querySelectorAll<HTMLButtonElement>('[data-tab]')
 const tabs = document.querySelectorAll<HTMLDivElement>('[id^="tab-"]')
 
