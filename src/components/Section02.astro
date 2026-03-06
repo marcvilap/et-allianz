@@ -13,7 +13,8 @@ const items = [
 		subtitle: 'Tu primera defensa frente al clima inestable empieza en casa',
 		description:
 			'El clima cambia, pero tu tranquilidad no tiene por qué hacerlo. Revisar pequeños detalles, reforzar puntos clave y anticiparse a lluvias o rachas de viento permite disfrutar del hogar con confianza.',
-		link: '',
+		link: 'https://www.eltiempo.es/tiempo-libre/tormenta-a-la-vista-tu-primera-defensa-frente-al-clima-inestable-empieza-en-casa-bracon',
+		locked: false,
 	},
 	{
 		image: img2,
@@ -23,6 +24,7 @@ const items = [
 		description:
 			'Una tubería rota, una cerradura bloqueada o un corte de luz inesperado. Contar con asistencia rápida y profesional convierte lo urgente en algo manejable, sin estrés ni sorpresas.',
 		link: '',
+		locked: true,
 	},
 	{
 		image: img3,
@@ -32,18 +34,19 @@ const items = [
 		description:
 			'La tranquilidad de saber que tu hogar está protegido es la base de una vida plena. Anticiparse, prevenir y cuidar cada rincón es invertir en bienestar para toda la familia.',
 		link: '',
+		locked: true,
 	},
 ]
 ---
 
 <section class="grid bg-blue-950 text-white lg:grid-cols-3">
 	{
-		items.map(({ image, label, title, subtitle, description, link }) => (
+		items.map(({ image, label, title, subtitle, description, link, locked }) => (
 			<article class="relative flex min-h-screen items-end overflow-clip">
 				<Image class="absolute top-0 left-0 size-full object-cover opacity-75" src={image} alt="" />
 				<span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75" />
 				<div class="relative container py-24">
-					<div class="group reveal space-y-6">
+					<div class:list={['group reveal space-y-6', { 'blur-[2px] select-none pointer-events-none': locked }]}>
 						<h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0">
 							{label}
 						</h2>
@@ -56,6 +59,16 @@ const items = [
 						</a>
 					</div>
 				</div>
+				{locked && (
+					<div class="absolute inset-0 z-10 flex items-center justify-center">
+						<div class="flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-8 py-6 backdrop-blur-sm">
+							<svg xmlns="http://www.w3.org/2000/svg" class="size-10 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+							</svg>
+							<span class="text-sm tracking-widest uppercase text-white/80">Próximamente</span>
+						</div>
+					</div>
+				)}
 			</article>
 		))
 	}
