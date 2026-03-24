@@ -19,12 +19,12 @@ const items = [
 	{
 		image: img2,
 		label: 'Emergencias',
-		title: 'Cada minuto cuenta',
-		subtitle: 'Cuando llegar a tiempo marca la diferencia',
+		title: 'A tiempo',
+		subtitle: 'Protege tu hogar y disfruta sin preocupaciones',
 		description:
 			'Una tubería rota, una cerradura bloqueada o un corte de luz inesperado. Contar con asistencia rápida y profesional convierte lo urgente en algo manejable, sin estrés ni sorpresas.',
-		link: '',
-		locked: true,
+		link: 'https://www.eltiempo.es/vida-saludable/protege-tu-hogar-y-disfruta-sin-preocupaciones-bracon',
+		locked: false,
 	},
 	{
 		image: img3,
@@ -46,7 +46,7 @@ const items = [
 				<Image class="absolute top-0 left-0 size-full object-cover opacity-75" src={image} alt="" />
 				<span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75" />
 				<div class="relative container py-24">
-					<div class:list={['group reveal space-y-6', { 'blur-[2px] select-none pointer-events-none': locked }]}>
+					<div class:list={['group reveal space-y-6', { 'pointer-events-none blur-[2px] select-none': locked }]}>
 						<h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0">
 							{label}
 						</h2>
@@ -63,9 +63,13 @@ const items = [
 					<div class="absolute inset-0 z-10 flex items-center justify-center">
 						<div class="flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-8 py-6 backdrop-blur-sm">
 							<svg xmlns="http://www.w3.org/2000/svg" class="size-10 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+								/>
 							</svg>
-							<span class="text-sm tracking-widest uppercase text-white/80">Próximamente</span>
+							<span class="text-sm tracking-widest text-white/80 uppercase">Próximamente</span>
 						</div>
 					</div>
 				)}

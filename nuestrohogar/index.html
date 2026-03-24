@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="es-ES"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex,nofollow"><title>Nuestro hogar, nuestro futuro</title><meta property="description" content="El hogar es el lugar donde empiezan las decisiones valientes: mudarse, ampliar la familia, empezar de nuevo."><meta property="og:type" content="website"><meta property="og:url" content="/"><meta property="og:image" content="/thumbnail.jpg"><meta property="og:title" content="Nuestro hogar, nuestro futuro"><meta property="og:description" content="El hogar es el lugar donde empiezan las decisiones valientes: mudarse, ampliar la familia, empezar de nuevo."><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="/thumbnail.jpg"><meta property="twitter:title" content="Nuestro hogar, nuestro futuro"><meta property="twitter:description" content="El hogar es el lugar donde empiezan las decisiones valientes: mudarse, ampliar la familia, empezar de nuevo."><link rel="icon" href="/favicon.png"><!-- Didomi Eltiempo.es --><!-- No se puede eliminar --><script>
+	if (!window.didomiConfig) window.didomiConfig = {}
+	if (!window.didomiConfig.notice) window.didomiConfig.notice = {}
+	window.didomiConfig.notice.enable = false
+</script> <script data-description="Didomi SDK">
+	window.gdprAppliesGlobally = true
+	;(function () {
+		function n(e) {
+			if (!window.frames[e]) {
+				if (document.body && document.body.firstChild) {
+					var t = document.body
+					var r = document.createElement('iframe')
+					r.style.display = 'none'
+					r.name = e
+					r.title = e
+					t.insertBefore(r, t.firstChild)
+				} else {
+					setTimeout(function () {
+						n(e)
+					}, 5)
+				}
+			}
+		}
+		function e(r, a, o, s, c) {
+			function e(e, t, r, n) {
+				if (typeof r !== 'function') {
+					return
+				}
+				if (!window[a]) {
+					window[a] = []
+				}
+				var i = false
+				if (c) {
+					i = c(e, n, r)
+				}
+				if (!i) {
+					window[a].push({ command: e, version: t, callback: r, parameter: n })
+				}
+			}
+			e.stub = true
+			e.stubVersion = 2
+			function t(n) {
+				if (!window[r] || window[r].stub !== true) {
+					return
+				}
+				if (!n.data) {
+					return
+				}
+				var i = typeof n.data === 'string'
+				var e
+				try {
+					e = i ? JSON.parse(n.data) : n.data
+				} catch (t) {
+					return
+				}
+				if (e[o]) {
+					var a = e[o]
+					window[r](
+						a.command,
+						a.version,
+						function (e, t) {
+							var r = {}
+							r[s] = { returnValue: e, success: t, callId: a.callId }
+							n.source.postMessage(i ? JSON.stringify(r) : r, '*')
+						},
+						a.parameter,
+					)
+				}
+			}
+			if (typeof window[r] !== 'function') {
+				window[r] = e
+				if (window.addEventListener) {
+					window.addEventListener('message', t, false)
+				} else {
+					window.attachEvent('onmessage', t)
+				}
+			}
+		}
+		e('__uspapi', '__uspapiBuffer', '__uspapiCall', '__uspapiReturn')
+		n('__uspapiLocator')
+		e('__tcfapi', '__tcfapiBuffer', '__tcfapiCall', '__tcfapiReturn')
+		n('__tcfapiLocator')
+		;(function (e) {
+			var t = document.createElement('link')
+			t.rel = 'preconnect'
+			t.as = 'script'
+			var r = document.createElement('link')
+			r.rel = 'dns-prefetch'
+			r.as = 'script'
+			var n = document.createElement('link')
+			n.rel = 'preload'
+			n.as = 'script'
+			var i = document.createElement('script')
+			i.id = 'spcloader'
+			i.type = 'text/javascript'
+			i['async'] = true
+			var a = 'https://sdk.privacy-center.org/' + e + '/loader.js?target=' + document.location.hostname
+			if (window.didomiConfig && window.didomiConfig.user) {
+				var o = window.didomiConfig.user
+				var s = o.country
+				var c = o.region
+				if (s) {
+					a = a + '&country=' + s
+					if (c) {
+						a = a + '&region=' + c
+					}
+				}
+			}
+			t.href = 'https://sdk.privacy-center.org/'
+			r.href = 'https://sdk.privacy-center.org/'
+			n.href = a
+			i.src = a
+			var d = document.getElementsByTagName('script')[0]
+			d.parentNode.insertBefore(t, d)
+			d.parentNode.insertBefore(r, d)
+			d.parentNode.insertBefore(n, d)
+			d.parentNode.insertBefore(i, d)
+		})('c9724c50-1caa-40a9-9c18-ef7c27b8e01b')
+	})()
+</script> <script>
+	!(function () {
+		var cpBaseUrl = 'https://cp.eltiempo.es'
+		var cpController = cpBaseUrl + '/now.js'
+		var cpPropertyId = '4fb43238'
+
+		!(function (C, o, n, t, P, a, s) {
+			C['CPObject'] = n
+			C[n] ||
+				(C[n] = function () {
+					;(C[n].q = C[n].q || []).push(arguments)
+				})
+			C[n].l = +new Date()
+			a = o.createElement(t)
+			s = o.getElementsByTagName(t)[0]
+			a.src = P
+			s.parentNode.insertBefore(a, s)
+		})(window, document, 'cp', 'script', cpController)
+		cp('create', cpPropertyId, {
+			baseUrl: cpBaseUrl,
+		})
+		cp('render', {
+			onFullConsent: function () {
+				document.cookie = 'consent_state=0; SameSite=strict; Secure; path=/'
+			},
+		})
+		cp('authenticate', function (error, user) {
+			if (error) {
+				return
+			}
+
+			if (user.isLoggedIn() && user.hasValidSubscription()) {
+				document.cookie = 'consent_state=1; SameSite=strict; Secure; path=/'
+			} else {
+				document.cookie = 'consent_state=0; SameSite=strict; Secure; path=/'
+			}
+		})
+	})()
+</script> <!-- End Didomi Eltiempo.es --><!-- Google Tag Manager Eltiempo.es --><!-- No se puede eliminar --><script>
+	;(function (w, d, s, l, i) {
+		w[l] = w[l] || []
+		w[l].push({
+			'gtm.start': new Date().getTime(),
+			event: 'gtm.js',
+		})
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s),
+			dl = l != 'dataLayer' ? '&l=' + l : ''
+		j.async = true
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+		f.parentNode.insertBefore(j, f)
+	})(window, document, 'script', 'dataLayer', 'GTM-K9DJJ6X')
+</script> <!-- End Google Tag Manager Eltiempo.es --><link rel="stylesheet" href="/bc/nuestrohogar/_astro/index.CHZf-4wE.css"></head> <body> <nav id="nav" class="absolute inset-x-0 top-0 z-20 flex h-[48px] items-center justify-between bg-white/90 px-[24px] shadow backdrop-blur lg:px-[48px]"> <button class="w-[32px] cursor-pointer text-black" onclick="history.back()" aria-label="Back"> <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="stroke-3"><path d="m15 6-6 6 6 6" /></svg> </button> <a class="w-[96px]" target="_blank" rel="noreferrer" href="https://eltiempo.es" aria-label="ElTiempo"><svg viewBox="0 0 1000 334" class="text-[#04aeef]"><path fill="#ffac27" d="M604 106q-47-43-116-45h-10l-26 3a223 223 0 0 0-331 19l-3 3a125 125 0 0 0-42 239q-25-12-42-34l-2-2-9-15q-11-23-12-50c0-62 50-113 113-113h1a205 205 0 0 1 315-25l1 1q26-9 55-9c53 0 101 23 134 60q-10-17-26-32" /><path fill="currentColor" d="m309 263-3 19q-11 6-28 5c-23 0-27-12-27-23l1-10 9-47h-17l4-22h17l9-26h28l-5 26h28l-4 22h-28l-8 42-1 6q-1 7 9 8zm52-121q15 1 16 16c0 10-9 18-18 18-10 0-16-8-16-16 0-10 9-18 18-18m9 43-15 79h17l-3 17q-7 6-24 6c-17 0-21-9-21-17l1-11 14-74zm-122-46-25 127h17l-3 16q-9 5-24 6c-19 0-21-14-21-19l2-18 17-88-2-1-16-2 4-19c14-2 36-3 51-2m-58 70c0 32-34 40-62 37v7q1 14 22 13 14 0 27-5l1 21q-12 5-40 6c-17 0-43-9-43-38 0-50 37-66 60-66 19-1 35 8 35 25m-30 2q-1-8-9-7c-12 0-20 12-21 22 8 1 30-1 30-15m689 13c0 32-20 63-56 63-25 0-44-11-44-39 0-29 21-65 58-65 22 0 42 12 42 41m-33 1c0-8-3-16-11-16-15 0-22 27-22 40q0 12 11 14c13 0 22-23 22-38m41 35q13 1 13 13-1 14-15 15-12-1-13-13 2-14 15-15m86-25c0 22-23 27-42 25v3c0 5 2 10 15 10l19-3v14q-8 4-26 4c-13 0-31-6-31-26 0-34 26-45 41-45 13 1 24 7 24 18m-20 2q-1-5-6-5c-8 0-14 8-15 15 6 0 21-1 21-10m-180-14c0 41-33 65-52 65l-19-2-9 48h-25c-7 0-6-4-5-9l23-117-2-1-16-2 4-19 42-2-5 18h1q17-21 33-19c9 0 30 7 30 40m-32 2q0-17-9-17-16 1-21 33l-4 23 7 1c17 0 27-26 27-40m-95 40 16-1-3 17q-11 6-26 6-24-2-19-20l9-47q2-7-4-8-9 1-17 12l-12 61h-26q-6-1-4-6l12-59q2-7-5-8c-4 0-12 6-15 12l-12 62h-25q-6 0-5-6l14-72h-2l-15-2 4-19q20-3 42-2l-3 19q19-22 34-21 17 0 20 17 13-16 34-17c9 0 22 7 19 24zm359-25c0 7 21 16 21 28q0 19-28 20c-8 0-19-3-23-6l3-15q7 5 16 5 8 0 8-5c0-9-20-15-20-29q0-20 26-21 12 0 22 8l-4 13q-7-5-13-5-8 1-8 7m-503-31c0 32-34 40-62 37v7q1 14 22 13 14 0 27-5l1 21q-12 5-40 6c-17 0-43-9-43-38 0-50 37-66 60-66 20-1 35 8 35 25m-29 2q-1-8-9-7c-12 0-19 12-21 22 8 1 30-1 30-15m189-72q2 4 9 6l-2 2a175 175 0 0 0-202-32l-18-19-1-1a182 182 0 0 0-262 19l-12 16h-6a105 105 0 0 0-47 199v2l-13-5-4-2q-23-12-38-32l-2-2-9-15q-12-23-12-50c0-63 51-113 113-113h1a205 205 0 0 1 315-25l1 1q26-9 55-9c53 0 101 23 134 60" /></svg></a> <span class="w-[32px]"></span> </nav> <header id="header" class="fixed inset-x-0 z-50 px-12 text-white transition-colors duration-500" style="top: 4.5rem"> <a class="flex items-center gap-6" href="/"> <span class="grid leading-none"> <strong>Y a vivir</strong> <small class="text-xs uppercase transition-colors duration-500" id="header-subtitle">Un proyecto de</small> </span> <svg fill="currentColor" viewBox="0 0 960 241" id="header-logo" class="h-10 transition-colors duration-500 md:h-12"><path d="M254 191V46q-1-11-12-12h-36v14h3q8-1 8 9v134zm63-143q0-16-21-17-20 1-21 17 1 17 21 17t21-17m0 143V85q-1-11-12-12h-35v14h2q9 0 8 9v95zm80-56v22q-11 11-20 11t-9-12q0-13 8-16zm-50-28q18-8 36-9 14-1 14 14v2l-42 10q-22 9-22 35 0 33 30 33 10 0 19-4t16-10v2q-1 11 11 11h33v-13h-2q-9 1-8-10v-56c0-30-11-40-40-40q-15 0-28 3t-25 10zm148 84v-79q9-10 19-10 11-2 10 15v74h36v-80c0-18-1-24-7-31q-7-8-22-8c-14 0-24 5-38 17v-4q1-12-11-12h-34v14h2q9 0 9 9v95zm173-25h-51l49-68V73h-76q-13 0-13 13v22h14v-3q-1-8 8-8h26l-49 70v24h92zm190 22V55q0-14-14-14h-31v15h2q10-1 9 10v122zm15 0h34V85q1-16-14-15h-20zm-64 0V70h-21q-14-1-14 15v103zm131-67c0 58-42 101-99 101s-99-43-99-101c0-59 42-102 99-102s99 43 99 102m20 0C960 52 909 0 841 0S722 52 722 121c0 68 51 120 119 120s119-51 119-120M49 153h44l11 38h40L104 47q-4-13-17-13H30v14h4q10 0 10 7l-3 13L0 191h38ZM192 46q-1-11-12-12h-36v14h2q10-1 9 9v134h37ZM72 70l15 58H55Z" /></svg> </a> </header>  <main class="overflow-clip"> <div id="scroll-container"> <div id="scroll-wrapper"> <section class="reveal group relative flex min-h-screen items-center bg-black py-36 text-white"> <video class="absolute top-0 left-0 size-full object-cover opacity-25 blur-xs group-reveal:opacity-0" src="/bc/nuestrohogar/_astro/hero.oDAk-HG7.mp4" autoplay loop muted playsinline></video> <div class="relative container flex flex-col gap-12"> <h1 class="text-4xl font-semibold text-balance uppercase group-reveal:-translate-y-24 group-reveal:opacity-0 md:text-7xl">Nuestro hogar, nuestro futuro</h1> <div class="max-w-2xl space-y-6 self-end group-reveal:translate-y-24 group-reveal:opacity-0 md:text-lg"> <p>
+El hogar es el lugar donde empiezan las decisiones valientes: mudarse, ampliar la familia, empezar de nuevo. Cuidarlo y anticiparse a lo que pueda pasar
+				es la mejor forma de disfrutarlo con tranquilidad.
+</p> <p class="text-white/50 italic">Porque cuando sabes que todo está bajo control, solo queda una cosa: vivir.</p> </div> </div> <div id="scroll-indicator" class="absolute right-12 bottom-12 flex rotate-90 items-center gap-1 group-reveal:translate-y-24 group-reveal:opacity-0"> <span class="rotate-180 text-xs text-white/50 uppercase [writing-mode:vertical-lr]">Scroll</span> <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-5"><path d="m9 6 6 6-6 6" /></svg> </div> </section> <section class="grid bg-blue-950 text-white lg:grid-cols-3"> <article class="relative flex min-h-screen items-end overflow-clip"> <img src="/bc/nuestrohogar/_astro/img1.CTMzsC4c_Z1y2KkD.webp" alt loading="lazy" decoding="async" fetchpriority="auto" width="640" height="1080" class="absolute top-0 left-0 size-full object-cover opacity-75"> <span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75"></span> <div class="relative container py-24"> <div class="group reveal space-y-6"> <h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0"> Clima </h2> <h3 class="text-4xl font-semibold text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-100">Tormenta a la vista</h3> <h4 class="text-xl text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-200">Tu primera defensa frente al clima inestable empieza en casa</h4> <p class="text-sm text-white/50 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-300">El clima cambia, pero tu tranquilidad no tiene por qué hacerlo. Revisar pequeños detalles, reforzar puntos clave y anticiparse a lluvias o rachas de viento permite disfrutar del hogar con confianza.</p> <a class="group flex items-center gap-3 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-400" target="_blank" href="https://www.eltiempo.es/tiempo-libre/tormenta-a-la-vista-tu-primera-defensa-frente-al-clima-inestable-empieza-en-casa-bracon"> <span class="text-sm uppercase">Ver más</span> <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="size-6 rounded-full border border-white/50 p-1 transition-transform group-hover:translate-x-2"><path d="m9 6 6 6-6 6" /></svg> </a> </div> </div>  </article><article class="relative flex min-h-screen items-end overflow-clip"> <img src="/bc/nuestrohogar/_astro/img2.C5AnYf-k_ZK7lsY.webp" alt loading="lazy" decoding="async" fetchpriority="auto" width="640" height="1080" class="absolute top-0 left-0 size-full object-cover opacity-75"> <span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75"></span> <div class="relative container py-24"> <div class="group reveal space-y-6 blur-[2px] select-none pointer-events-none"> <h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0"> Emergencias </h2> <h3 class="text-4xl font-semibold text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-100">Cada minuto cuenta</h3> <h4 class="text-xl text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-200">Cuando llegar a tiempo marca la diferencia</h4> <p class="text-sm text-white/50 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-300">Una tubería rota, una cerradura bloqueada o un corte de luz inesperado. Contar con asistencia rápida y profesional convierte lo urgente en algo manejable, sin estrés ni sorpresas.</p> <a class="group flex items-center gap-3 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-400" target="_blank" href> <span class="text-sm uppercase">Ver más</span> <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="size-6 rounded-full border border-white/50 p-1 transition-transform group-hover:translate-x-2"><path d="m9 6 6 6-6 6" /></svg> </a> </div> </div> <div class="absolute inset-0 z-10 flex items-center justify-center"> <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-8 py-6 backdrop-blur-sm"> <svg xmlns="http://www.w3.org/2000/svg" class="size-10 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"></path> </svg> <span class="text-sm tracking-widest uppercase text-white/80">Próximamente</span> </div> </div> </article><article class="relative flex min-h-screen items-end overflow-clip"> <img src="/bc/nuestrohogar/_astro/img3.TOQ2K5ic_ZxM0Rv.webp" alt loading="lazy" decoding="async" fetchpriority="auto" width="640" height="1080" class="absolute top-0 left-0 size-full object-cover opacity-75"> <span class="absolute inset-0 bg-linear-to-b from-transparent to-blue-950/75"></span> <div class="relative container py-24"> <div class="group reveal space-y-6 blur-[2px] select-none pointer-events-none"> <h2 class="inline-block rounded border border-white/20 bg-white/10 px-3 text-sm tracking-widest uppercase backdrop-blur group-reveal:-translate-y-12 group-reveal:opacity-0"> Bienestar </h2> <h3 class="text-4xl font-semibold text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-100">Tu hogar, tu refugio</h3> <h4 class="text-xl text-balance group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-200">Proteger lo que más importa empieza por sentirse seguro en casa</h4> <p class="text-sm text-white/50 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-300">La tranquilidad de saber que tu hogar está protegido es la base de una vida plena. Anticiparse, prevenir y cuidar cada rincón es invertir en bienestar para toda la familia.</p> <a class="group flex items-center gap-3 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-400" target="_blank" href> <span class="text-sm uppercase">Ver más</span> <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="size-6 rounded-full border border-white/50 p-1 transition-transform group-hover:translate-x-2"><path d="m9 6 6 6-6 6" /></svg> </a> </div> </div> <div class="absolute inset-0 z-10 flex items-center justify-center"> <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-8 py-6 backdrop-blur-sm"> <svg xmlns="http://www.w3.org/2000/svg" class="size-10 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"></path> </svg> <span class="text-sm tracking-widest uppercase text-white/80">Próximamente</span> </div> </div> </article> </section> <section id="section-footer" class="flex min-h-screen items-center bg-blue-100 py-24 text-center"> <div class="container"> <div class="group reveal space-y-6"> <p class="group-reveal:-translate-y-12 group-reveal:opacity-0">Eltiempo Content para</p> <svg fill="currentColor" viewBox="0 0 960 241" class="mx-auto w-48 fill-blue-950 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-100"><path d="M254 191V46q-1-11-12-12h-36v14h3q8-1 8 9v134zm63-143q0-16-21-17-20 1-21 17 1 17 21 17t21-17m0 143V85q-1-11-12-12h-35v14h2q9 0 8 9v95zm80-56v22q-11 11-20 11t-9-12q0-13 8-16zm-50-28q18-8 36-9 14-1 14 14v2l-42 10q-22 9-22 35 0 33 30 33 10 0 19-4t16-10v2q-1 11 11 11h33v-13h-2q-9 1-8-10v-56c0-30-11-40-40-40q-15 0-28 3t-25 10zm148 84v-79q9-10 19-10 11-2 10 15v74h36v-80c0-18-1-24-7-31q-7-8-22-8c-14 0-24 5-38 17v-4q1-12-11-12h-34v14h2q9 0 9 9v95zm173-25h-51l49-68V73h-76q-13 0-13 13v22h14v-3q-1-8 8-8h26l-49 70v24h92zm190 22V55q0-14-14-14h-31v15h2q10-1 9 10v122zm15 0h34V85q1-16-14-15h-20zm-64 0V70h-21q-14-1-14 15v103zm131-67c0 58-42 101-99 101s-99-43-99-101c0-59 42-102 99-102s99 43 99 102m20 0C960 52 909 0 841 0S722 52 722 121c0 68 51 120 119 120s119-51 119-120M49 153h44l11 38h40L104 47q-4-13-17-13H30v14h4q10 0 10 7l-3 13L0 191h38ZM192 46q-1-11-12-12h-36v14h2q10-1 9 9v134h37ZM72 70l15 58H55Z" /></svg> <p class="font-semibold uppercase group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-200"> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/bc/eltiempocontent/">La fábrica de contenidos de ElTiempo </a> <span class="mx-2">|</span> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/bc/marcasresponsables/">Marcas Responsables</a> </p> <p class="group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-300"> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/legal/politica-privacidad.html">Política de privacidad</a> <span class="mx-2">|</span> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/legal/condiciones-generales.html">Aviso legal</a> <span class="mx-2">|</span> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/legal/politica-cookies.html">Política de cookies</a> </p> <hr class="mx-auto w-full max-w-80 group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-400"> <p class="group-reveal:translate-y-12 group-reveal:opacity-0 group-revealed:delay-500"> <a class="hover:underline" target="_blank" href="https://www.eltiempo.es/">© eltiempo, Pelmorex Weather Networks 2026</a> </p> </div> </div> </section> </div> <span id="scroll-progress"></span> </div> </main>  <script type="module">function u(){if(CSS.supports("animation-timeline: view()")||!window.matchMedia("(min-width: 80rem)").matches)return;const t=document.getElementById("scroll-container"),e=document.getElementById("scroll-wrapper"),o=document.getElementById("scroll-progress"),s=document.getElementById("scroll-indicator");if(!t||!e)return;t.style.height="300vw",e.style.position="sticky",e.style.top="0",e.style.display="grid",e.style.width="300vw",e.style.gridTemplateColumns="repeat(3, 1fr)",e.style.willChange="transform",o&&(o.style.position="fixed",o.style.bottom="3rem",o.style.left="0",o.style.height="0.25rem",o.style.backgroundColor="rgba(255, 255, 255, 0.5)"),s&&(s.style.transform="rotate(0deg)");const n=()=>{const l=t.offsetHeight-window.innerHeight,m=-t.getBoundingClientRect().top,c=Math.max(0,Math.min(1,m/l));e.style.transform=`translateX(${-200*c}vw)`,o&&(o.style.width=`${100*c}vw`)};window.addEventListener("scroll",n,{passive:!0}),n()}u();const h=new IntersectionObserver(t=>{t.forEach(({isIntersecting:e,target:o})=>{o.classList.toggle("reveal",!e),o.classList.toggle("revealed",e)})});document.querySelectorAll(".reveal").forEach(t=>h.observe(t));const r=document.getElementById("header"),i=document.getElementById("header-subtitle"),a=document.getElementById("nav"),d=document.getElementById("section-footer");if(r){const t=document.getElementById("header-logo"),e=24,o=()=>{if(a){const s=Math.max(0,a.getBoundingClientRect().bottom);r.style.top=`${s+e}px`}if(t&&d){const s=t.getBoundingClientRect(),n=d.getBoundingClientRect(),l=s.right>n.left&&s.left<n.right&&s.bottom>n.top&&s.top<n.bottom;r.classList.toggle("text-white",!l),r.classList.toggle("text-blue-950",l),i?.classList.toggle("text-white/50",!l),i?.classList.toggle("text-blue-950/50",l)}};window.addEventListener("scroll",o,{passive:!0}),o()}const g=document.querySelectorAll("[data-tab]"),y=document.querySelectorAll('[id^="tab-"]');g.forEach(t=>{t.addEventListener("click",()=>{g.forEach(e=>e.classList.replace("bg-stone-200","bg-stone-100")),t.classList.replace("bg-stone-100","bg-stone-200"),y.forEach(e=>e.classList.add("hidden")),document.querySelector(t.dataset.tab)?.classList.remove("hidden")})});</script> </body> </html>
